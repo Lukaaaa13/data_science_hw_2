@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d1744d0-fb3b-4b76-9377-36b9a5aeafa2" name="Changes" comment="" />
+    <list default="true" id="5d1744d0-fb3b-4b76-9377-36b9a5aeafa2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/math_quiz/math_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/math_quiz/math_quiz.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,8 +28,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.math_quiz.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "code__cleanup"
   }
 }]]></component>
   <component name="SharedIndexes">

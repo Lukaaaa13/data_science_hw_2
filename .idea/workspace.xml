@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d1744d0-fb3b-4b76-9377-36b9a5aeafa2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/math_quiz/math_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/math_quiz/math_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
     "Python.math_quiz.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "code__cleanup"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="SharedIndexes">

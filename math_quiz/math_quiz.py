@@ -1,46 +1,118 @@
+import math
 import random
 
 
-def function_A(min, max):
+def make_random_number(min, max):
     """
-    Random integer.
+    Returns a random integer bigger than min and smaller than max.
+    
+    Args:
+        min (int): minimal value
+        max (int): maximal value
+        
+    Returns:
+        int: a random integer bigger than min and smaller than max
     """
+    
+    try:
+        return random.randint(min, max)
+    except:
+        min = int(min)
+        max = int(max)
+    
     return random.randint(min, max)
 
 
-def function_B():
+def choose_math_symbol():
+    """
+    Chooses the plus, minus or astrix symbol randomly and returns it
+
+    Returns:
+        str: randomly a '+', '-' or '*'
+        """
+    
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
-    return p, a
+def generate_problem_and_solution(number1, number2, math_symbol):
+    """
+            creates a string representation of a math problem and calculates its solution
+
+            Args:
+                number1 (int): a number
+                number2 (int): another number
+                math_symbol (str): one of the following: '+', '-' or '*'
+
+            Returns:
+                str: string representation of a math problem
+                int: solution of math problem
+            """
+    
+    # raises a typeerror if the input numbers aren't integers
+    if type(number1) is not int or type(number2) is not int:
+        raise TypeError("the input numbers have to be integers!")
+    
+    # calculating the solution based on the chosen math symbol
+    if math_symbol == '+':
+        solution = number1 + number2
+    elif math_symbol == '-':
+        solution = number1 - number2
+    elif math_symbol == '*':
+        solution = number1 * number2
+    else:
+        
+        # setting asterisk as math symbol in case of an invalid input
+        print('Your math symbol is not valid. We will replace it with "*".')
+        solution = number1 * number2
+        math_symbol = '*'
+    
+    # creating a string representation of the math problem
+    math_problem = f"{number1} {math_symbol} {number2}"
+    
+    return math_problem, solution
 
 def math_quiz():
-    s = 0
-    t_q = 3.14159265359
+    
+    points = 0 # counter for earned points
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
-
-        PROBLEM, ANSWER = function_C(n1, n2, o)
-        print(f"\nQuestion: {PROBLEM}")
+    # creating three game rounds of math problems
+    for _ in range(3):
+        
+        # creating random numbers and the math symbol
+        number1 = make_random_number(1, 10)
+        number2 = make_random_number(1, 5.5)
+        math_symbol = choose_math_symbol()
+        
+        # creating the math problem and calculating its solution
+        string_representation, solution = generate_problem_and_solution(number1, number2, math_symbol)
+        
+        print(f"\nQuestion: {string_representation}")
         useranswer = input("Your answer: ")
-        useranswer = int(useranswer)
-
-        if useranswer == ANSWER:
+        
+        # try converting the user input to int
+        try:
+            user_answer = int(user_answer)
+        except:
+            # if the conversion doesn't work, the user gets a second chance for their answer before the game ends
+            try:
+                print("Try again! Tip: the solution is a number.")
+                user_answer = input("Your answer: ")
+                user_answer = int(user_answer)
+            except:
+                print("womp womp womp, you failed to make a sensible input :(")
+                break
+                
+        # checking whether the user's solution is correct and give a point if positive
+        if useranswer == solution:
             print("Correct! You earned a point.")
-            s += -(-1)
+            points += 1
         else:
-            print(f"Wrong answer. The correct answer is {ANSWER}.")
+            print(f"Wrong answer. The correct answer is {solution}.")
 
-    print(f"\nGame over! Your score is: {s}/{t_q}")
+    print(f"\nGame over! Your score is: {points}/{math.pi}")
 
 if __name__ == "__main__":
     math_quiz()

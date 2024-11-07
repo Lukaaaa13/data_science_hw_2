@@ -1,3 +1,3 @@
-import math_quiz as mq
+from .math_quiz import math_quiz
 
-mq.math_quiz()
+math_quiz()
